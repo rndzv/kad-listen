@@ -1,0 +1,36 @@
+{
+  "name": "kad-listen",
+  "version": "0.1.0",
+  "description": "Listen method for KAD",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rndzv/kad-listen.git"
+  },
+  "keywords": [
+    "kad"
+  ],
+  "author": "Abe Fetterman <abe@rndzv.com>",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": "6.x.x"
+  },
+  "bugs": {
+    "url": "https://github.com/rndzv/kad-listen/issues"
+  },
+  "homepage": "https://github.com/rndzv/kad-listen#readme",
+  "dependencies": {
+    "kad": "^1.6.4"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "proxyquire": "^1.7.3",
+    "sinon": "^1.17.2"
+  }
+}
