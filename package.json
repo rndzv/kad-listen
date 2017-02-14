@@ -4,7 +4,13 @@
   "description": "Listen method for KAD",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**"
+    "test": "npm run testsuite && npm run linter",
+    "testsuite": "./node_modules/.bin/mocha test/** --recursive",
+    "coverage": "./node_modules/.bin/istanbul cover -x 'lib/logger.js' ./node_modules/.bin/_mocha -- --recursive",
+    "linter": "./node_modules/.bin/jshint --config .jshintrc ./index.js ./lib ./test",
+    "build": "./node_modules/.bin/browserify index.js -s kad -o dist/kad.browser.js",
+    "simulation": "node script/simulation.js",
+    "makedoc": "./node_modules/.bin/jsdoc index.js lib -r -R README.md -u doc -c .jsdoc.json --verbose -d ../kadtools.github.io"
   },
   "repository": {
     "type": "git",
@@ -26,11 +32,17 @@
     "kad": "^1.6.4"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "coveralls": "^2.11.6",
-    "istanbul": "^0.4.1",
-    "mocha": "^2.3.4",
+    "browserify": "^11.1.0",
+    "chai": "^2.2.0",
+    "coveralls": "^2.11.2",
+    "faker": "^2.1.2",
+    "ink-docstrap": "^1.1.2",
+    "istanbul": "^0.3.13",
+    "jsdoc": "^3.4.0",
+    "jshint": "2.8.0",
+    "mocha": "^2.2.4",
+    "pem": "^1.8.1",
     "proxyquire": "^1.7.3",
-    "sinon": "^1.17.2"
+    "sinon": "^1.14.1"
   }
 }
